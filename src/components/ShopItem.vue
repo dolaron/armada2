@@ -35,33 +35,19 @@ export default {
     }
   },
   mounted() {
-
-    this.myTween = gsap.from(this.$refs[this.refson], {
+    gsap.timeline({
       scrollTrigger: {
-        trigger: this.$refs[this.refson],
-        start: "10% 10%",
+        // start: "10% 10%",
         scrub: true,
-        markers: true,
-        toggleActions: "play play play play"
+        // markers: true,
+        toggleActions: "restart pause reverse pause"
       },
-      x: 400,
+    }).to(this.$refs[this.refson], {
+      // x: 400,
       rotation: 360,
       duration: 3
     });
   }
-
-  // setup(props) {
-  //   const imageFirst = computed(() => {
-  //     return {
-  //       '--img-order': props.imgFirst ? '0' : '2'
-  //     };
-  //   });
-
-  //   return {
-  //     imageFirst,
-  //     props
-  //   }
-  // }
 };
 </script>
 
